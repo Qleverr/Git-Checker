@@ -30,16 +30,16 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.новыйРепозиторийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.существующийРепозиторийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.repoAddressTextBox = new System.Windows.Forms.TextBox();
+            this.openRepositoryButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -68,12 +68,6 @@
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.менюToolStripMenuItem.Text = "Меню";
             // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.справкаToolStripMenuItem.Text = "Справка";
-            // 
             // новыйРепозиторийToolStripMenuItem
             // 
             this.новыйРепозиторийToolStripMenuItem.Name = "новыйРепозиторийToolStripMenuItem";
@@ -92,10 +86,16 @@
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.repoAddressTextBox);
+            this.groupBox1.Controls.Add(this.openRepositoryButton);
             this.groupBox1.Location = new System.Drawing.Point(12, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(520, 57);
@@ -103,22 +103,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Адрес репозитория";
             // 
-            // button1
+            // repoAddressTextBox
             // 
-            this.button1.Location = new System.Drawing.Point(423, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 33);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Открыть";
-            this.button1.UseVisualStyleBackColor = true;
+            this.repoAddressTextBox.Location = new System.Drawing.Point(6, 18);
+            this.repoAddressTextBox.Multiline = true;
+            this.repoAddressTextBox.Name = "repoAddressTextBox";
+            this.repoAddressTextBox.Size = new System.Drawing.Size(390, 33);
+            this.repoAddressTextBox.TabIndex = 1;
             // 
-            // textBox1
+            // openRepositoryButton
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 18);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(390, 33);
-            this.textBox1.TabIndex = 1;
+            this.openRepositoryButton.Location = new System.Drawing.Point(423, 18);
+            this.openRepositoryButton.Name = "openRepositoryButton";
+            this.openRepositoryButton.Size = new System.Drawing.Size(91, 33);
+            this.openRepositoryButton.TabIndex = 0;
+            this.openRepositoryButton.Text = "Открыть";
+            this.openRepositoryButton.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -130,6 +130,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Статус репозитория";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 20);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(243, 186);
+            this.listBox1.TabIndex = 0;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button2);
@@ -139,14 +147,6 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Сохранить";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 20);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(243, 186);
-            this.listBox1.TabIndex = 0;
             // 
             // button2
             // 
@@ -189,8 +189,8 @@
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox repoAddressTextBox;
+        private System.Windows.Forms.Button openRepositoryButton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox3;
