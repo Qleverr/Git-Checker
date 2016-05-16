@@ -38,6 +38,7 @@ namespace repo_checker
 
         private void showRepositoriesButton_Click(object sender, EventArgs e)
         {
+            this.usersRepositoriesListBox.Items.Clear();
             PrintRepositoriesByUser();
         }
     }
