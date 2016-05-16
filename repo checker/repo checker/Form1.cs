@@ -69,5 +69,10 @@ namespace repo_checker
                 listBox3.Items.Add("Изменения: " + c.Commit.Message);
             }
         }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
