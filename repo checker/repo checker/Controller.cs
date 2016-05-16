@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Octokit;
+using System.Net;
 using Octokit.Helpers;
 using Octokit.Internal;
 
@@ -25,6 +26,7 @@ namespace repo_checker
             this._view = view;
             this._view.PrintRepositoriesByUser += GetRepositoriesByUser;
             this._view.PrintRepositoryCommits += GetRepositoryCommits;
+            this._view.SaveZip += Save;
         }
 
         private async void GetRepositoriesByUser()
@@ -36,6 +38,18 @@ namespace repo_checker
             {
                 _view.GetUserRepositoriesListBox().Items.Add(r.Name);
             }
+        }
+
+        private async void Save()
+        {
+            var rep = repositories[this._view.GetUserRepositoriesListBox().SelectedIndex];
+            var commits = await client.Repository.Commits.GetAll(rep.Owner.Login, rep.Name);
+
+            var releases = await client.Release.GetAll(rep.Owner.Login, rep.Name);
+
+            var wc = new WebClient();
+
+            wc.DownloadFile(ghe + _view.GetUsername() + "/" + rep.Name + "/archive/master.zip", rep.Name + ".zip");
         }
 
         //private async void GetRepositoryInfo()

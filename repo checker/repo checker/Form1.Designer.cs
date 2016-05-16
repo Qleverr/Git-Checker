@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.repositoryInfoListBox = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.commitsListBox = new System.Windows.Forms.ListBox();
-            this.справкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,11 +68,18 @@
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.менюToolStripMenuItem.Text = "Меню";
             // 
+            // справкаToolStripMenuItem1
+            // 
+            this.справкаToolStripMenuItem1.Name = "справкаToolStripMenuItem1";
+            this.справкаToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.справкаToolStripMenuItem1.Text = "Справка";
+            // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -112,6 +119,7 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Сохранить выбранный репозиторий";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
@@ -168,12 +176,6 @@
             this.commitsListBox.Name = "commitsListBox";
             this.commitsListBox.Size = new System.Drawing.Size(300, 108);
             this.commitsListBox.TabIndex = 0;
-            // 
-            // справкаToolStripMenuItem1
-            // 
-            this.справкаToolStripMenuItem1.Name = "справкаToolStripMenuItem1";
-            this.справкаToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.справкаToolStripMenuItem1.Text = "Справка";
             // 
             // Form1
             // 

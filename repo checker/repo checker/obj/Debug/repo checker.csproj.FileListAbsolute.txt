@@ -73,3 +73,18 @@ C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo_checker.Form1.resources
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo_checker.Properties.Resources.resources
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo checker.csproj.GenerateResource.Cache
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\bin\Debug\repo checker.exe.config
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\obj\Debug\repo checker.exe
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\obj\Debug\repo checker.pdb
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\bin\Debug\repo checker.exe
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\bin\Debug\repo checker.pdb
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\bin\Debug\Octokit.pdb
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\bin\Debug\Octokit.xml
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\bin\Debug\Spring.Rest.pdb
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\bin\Debug\Spring.Rest.xml
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\bin\Debug\Spring.Social.Core.pdb
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\bin\Debug\Spring.Social.Core.xml
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\obj\Debug\repo checker.csprojResolveAssemblyReference.cache
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\obj\Debug\repo_checker.Form1.resources
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\obj\Debug\repo_checker.Properties.Resources.resources
+E:\Alsu\Documents\Visual Studio 2015\Projects\Git-Checker-master\repo checker\repo checker\obj\Debug\repo checker.csproj.GenerateResource.Cache

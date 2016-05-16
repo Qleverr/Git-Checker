@@ -19,6 +19,7 @@ namespace repo_checker
 
         public event UserEventHandler PrintRepositoriesByUser;
         public event UserEventHandler PrintRepositoryCommits;
+        public event UserEventHandler SaveZip;
 
         public Form1()
         {
@@ -58,6 +59,16 @@ namespace repo_checker
         private void usersRepositoriesListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             PrintRepositoryCommits();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveZip();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
