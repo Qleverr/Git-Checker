@@ -40,9 +40,10 @@
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.showRepositoriesButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.usersRepositoriesListBox = new System.Windows.Forms.ListBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -56,7 +57,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(756, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(554, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -97,40 +98,41 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.showUserInfo);
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.usernameTextBox);
             this.groupBox1.Controls.Add(this.showRepositoriesButton);
             this.groupBox1.Location = new System.Drawing.Point(12, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 100);
+            this.groupBox1.Size = new System.Drawing.Size(532, 100);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Введите логин пользователя";
             // 
             // showUserInfo
             // 
-            this.showUserInfo.Location = new System.Drawing.Point(156, 57);
+            this.showUserInfo.Location = new System.Drawing.Point(380, 57);
             this.showUserInfo.Name = "showUserInfo";
             this.showUserInfo.Size = new System.Drawing.Size(146, 33);
             this.showUserInfo.TabIndex = 4;
             this.showUserInfo.Text = "Показать информацию";
             this.showUserInfo.UseVisualStyleBackColor = true;
+            this.showUserInfo.Click += new System.EventHandler(this.showUserInfo_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(18, 276);
+            this.button2.Location = new System.Drawing.Point(156, 57);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(306, 33);
+            this.button2.Size = new System.Drawing.Size(218, 33);
             this.button2.TabIndex = 0;
             this.button2.Text = "Сохранить выбранный репозиторий";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.usernameTextBox.Location = new System.Drawing.Point(6, 18);
             this.usernameTextBox.Multiline = true;
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(296, 33);
+            this.usernameTextBox.Size = new System.Drawing.Size(520, 33);
             this.usernameTextBox.TabIndex = 1;
             // 
             // showRepositoriesButton
@@ -145,48 +147,56 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.listBox3);
             this.groupBox2.Controls.Add(this.usersRepositoriesListBox);
-            this.groupBox2.Location = new System.Drawing.Point(18, 146);
+            this.groupBox2.Location = new System.Drawing.Point(12, 154);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(306, 124);
+            this.groupBox2.Size = new System.Drawing.Size(255, 214);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Список репозиториев";
             // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(6, 108);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(243, 95);
+            this.listBox3.TabIndex = 5;
+            // 
             // usersRepositoriesListBox
             // 
             this.usersRepositoriesListBox.FormattingEnabled = true;
-            this.usersRepositoriesListBox.Location = new System.Drawing.Point(6, 14);
+            this.usersRepositoriesListBox.Location = new System.Drawing.Point(6, 20);
             this.usersRepositoriesListBox.Name = "usersRepositoriesListBox";
-            this.usersRepositoriesListBox.Size = new System.Drawing.Size(290, 95);
+            this.usersRepositoriesListBox.Size = new System.Drawing.Size(243, 82);
             this.usersRepositoriesListBox.TabIndex = 0;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.listBox2);
-            this.groupBox4.Location = new System.Drawing.Point(330, 40);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(414, 370);
-            this.groupBox4.TabIndex = 4;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Информация репозитория";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            this.usersRepositoriesListBox.SelectedIndexChanged += new System.EventHandler(this.usersRepositoriesListBox_SelectedIndexChanged);
             // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(6, 19);
+            this.listBox2.Location = new System.Drawing.Point(6, 20);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(402, 342);
+            this.listBox2.Size = new System.Drawing.Size(243, 186);
             this.listBox2.TabIndex = 0;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.listBox2);
+            this.groupBox4.Location = new System.Drawing.Point(289, 154);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(255, 214);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Информация о пользователе";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 422);
+            this.ClientSize = new System.Drawing.Size(554, 381);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -216,11 +226,12 @@
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Button showRepositoriesButton;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox usersRepositoriesListBox;
+        public System.Windows.Forms.ListBox usersRepositoriesListBox;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button showUserInfo;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ListBox listBox2;
+        public System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBox3;
     }
 }
 

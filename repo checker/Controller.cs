@@ -21,22 +21,23 @@ namespace repo_checker
         {
             this._view = view;
             this._view.PrintRepositoriesByUser += GetRepositoriesByUser;
+            this._view.repositories = new List<Repository>();
         }
 
         private async void GetRepositoriesByUser()
         {
             var ghe = new Uri("https://github.com/");
-            var client = new GitHubClient(new ProductHeaderValue(_view.GetUsername()), ghe);
-            var test = await client.Repository.Content.GetAllContents(_view.GetUsername(), ghe);
+            this._view.client = new GitHubClient(new ProductHeaderValue(_view.GetUsername()), ghe);
 
-            var repos = await client.Repository.GetAllForUser(_view.GetUsername());
+            this._view.repositories = await this._view.client.Repository.GetAllForUser(_view.GetUsername());
 
             //DateTimeOffset data;
-            foreach (var repository in repos)
+            foreach (var repository in this._view.repositories)
             {
                 _view.GetUserRepositoriesListBox().Items.Add(repository.Name);
             }
         }
+        
     }
 }
 
