@@ -42,14 +42,16 @@ namespace repo_checker
 
         private async void Save()
         {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            DialogResult dialogResult = folderBrowserDialog.ShowDialog();
+
             var rep = repositories[this._view.GetUserRepositoriesListBox().SelectedIndex];
             var commits = await client.Repository.Commits.GetAll(rep.Owner.Login, rep.Name);
 
             var releases = await client.Release.GetAll(rep.Owner.Login, rep.Name);
 
             var wc = new WebClient();
-
-            wc.DownloadFile(ghe + _view.GetUsername() + "/" + rep.Name + "/archive/master.zip", rep.Name + ".zip");
+            wc.DownloadFile(ghe + _view.GetUsername() + "/" + rep.Name + "/archive/master.zip", folderBrowserDialog.SelectedPath + "/" + rep.Name + ".zip");
         }
 
         //private async void GetRepositoryInfo()
