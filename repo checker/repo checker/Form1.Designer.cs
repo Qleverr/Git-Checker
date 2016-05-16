@@ -30,10 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.новыйРепозиторийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.существующийРепозиторийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.showRepositoriesButton = new System.Windows.Forms.Button();
@@ -44,6 +41,7 @@
             this.repositoryInfoListBox = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.commitsListBox = new System.Windows.Forms.ListBox();
+            this.справкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -54,8 +52,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.менюToolStripMenuItem,
-            this.справкаToolStripMenuItem});
+            this.менюToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(756, 24);
@@ -65,36 +62,17 @@
             // менюToolStripMenuItem
             // 
             this.менюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.новыйРепозиторийToolStripMenuItem,
-            this.существующийРепозиторийToolStripMenuItem,
+            this.справкаToolStripMenuItem1,
             this.выходToolStripMenuItem});
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.менюToolStripMenuItem.Text = "Меню";
             // 
-            // новыйРепозиторийToolStripMenuItem
-            // 
-            this.новыйРепозиторийToolStripMenuItem.Name = "новыйРепозиторийToolStripMenuItem";
-            this.новыйРепозиторийToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
-            this.новыйРепозиторийToolStripMenuItem.Text = "Новый репозиторий...";
-            // 
-            // существующийРепозиторийToolStripMenuItem
-            // 
-            this.существующийРепозиторийToolStripMenuItem.Name = "существующийРепозиторийToolStripMenuItem";
-            this.существующийРепозиторийToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
-            this.существующийРепозиторийToolStripMenuItem.Text = "Существующий репозиторий...";
-            // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.выходToolStripMenuItem.Text = "Выход";
-            // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // groupBox1
             // 
@@ -191,6 +169,12 @@
             this.commitsListBox.Size = new System.Drawing.Size(300, 108);
             this.commitsListBox.TabIndex = 0;
             // 
+            // справкаToolStripMenuItem1
+            // 
+            this.справкаToolStripMenuItem1.Name = "справкаToolStripMenuItem1";
+            this.справкаToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.справкаToolStripMenuItem1.Text = "Справка";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,10 +205,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem новыйРепозиторийToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem существующийРепозиторийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Button showRepositoriesButton;
@@ -235,6 +216,7 @@
         private System.Windows.Forms.ListBox repositoryInfoListBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox commitsListBox;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem1;
     }
 }
 
