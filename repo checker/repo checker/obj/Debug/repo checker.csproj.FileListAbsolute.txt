@@ -29,3 +29,6 @@ C:\Users\Василий\Documents\Visual Studio 2012\Projects\repo checker\repo 
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\repo checker.exe.config
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo checker.exe
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo checker.pdb
+C:\Users\Василий\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\repo checker.exe.config
+C:\Users\Василий\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo checker.exe
+C:\Users\Василий\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo checker.pdb

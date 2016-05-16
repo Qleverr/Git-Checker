@@ -7,19 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Octokit;
+using Octokit.Helpers;
+using Octokit.Internal;
 
 namespace repo_checker
 {
     public partial class Form1 : Form
     {
+        public delegate void UserEventHandler();
+
+        public event UserEventHandler PrintRepositoriesByUser;
+        //public event UserEventHandler OpenFile;
+        //public event UserEventHandler CreateFile;
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        public string GetUsername()
         {
+            return this.usernameTextBox.Text.ToString();
+        }
 
+        public ListBox GetUserRepositoriesListBox()
+        {
+            return this.usersRepositoriesListBox;
+        }
+
+        private void showRepositoriesButton_Click(object sender, EventArgs e)
+        {
+            PrintRepositoriesByUser();
         }
     }
 }
