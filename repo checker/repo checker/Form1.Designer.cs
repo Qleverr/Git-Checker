@@ -35,15 +35,15 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.showRepositoriesButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
             this.usersRepositoriesListBox = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.repositoryInfoListBox = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.commitsListBox = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,7 +58,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(656, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(756, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -102,98 +102,100 @@
             this.groupBox1.Controls.Add(this.showRepositoriesButton);
             this.groupBox1.Location = new System.Drawing.Point(12, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 86);
+            this.groupBox1.Size = new System.Drawing.Size(312, 88);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Введите логин пользователя";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(330, 349);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(312, 33);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Сохранить выбранный репозиторий";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // usernameTextBox
             // 
+            this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.usernameTextBox.Location = new System.Drawing.Point(6, 18);
+            this.usernameTextBox.Multiline = true;
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(300, 20);
+            this.usernameTextBox.Size = new System.Drawing.Size(296, 21);
             this.usernameTextBox.TabIndex = 1;
             // 
             // showRepositoriesButton
             // 
-            this.showRepositoriesButton.Location = new System.Drawing.Point(162, 44);
+            this.showRepositoriesButton.Location = new System.Drawing.Point(6, 45);
             this.showRepositoriesButton.Name = "showRepositoriesButton";
-            this.showRepositoriesButton.Size = new System.Drawing.Size(144, 33);
+            this.showRepositoriesButton.Size = new System.Drawing.Size(296, 33);
             this.showRepositoriesButton.TabIndex = 0;
             this.showRepositoriesButton.Text = "Показать репозитории";
             this.showRepositoriesButton.UseVisualStyleBackColor = true;
             this.showRepositoriesButton.Click += new System.EventHandler(this.showRepositoriesButton_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(373, 363);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(306, 33);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Сохранить выбранный репозиторий";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.usersRepositoriesListBox);
-            this.groupBox2.Location = new System.Drawing.Point(12, 132);
+            this.groupBox2.Location = new System.Drawing.Point(12, 134);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(312, 122);
+            this.groupBox2.Size = new System.Drawing.Size(312, 124);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Список репозиториев";
             // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(6, 19);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(300, 95);
-            this.listBox3.TabIndex = 5;
-            this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
-            // 
             // usersRepositoriesListBox
             // 
             this.usersRepositoriesListBox.FormattingEnabled = true;
-            this.usersRepositoriesListBox.Location = new System.Drawing.Point(6, 20);
+            this.usersRepositoriesListBox.Location = new System.Drawing.Point(6, 14);
             this.usersRepositoriesListBox.Name = "usersRepositoriesListBox";
             this.usersRepositoriesListBox.Size = new System.Drawing.Size(300, 95);
             this.usersRepositoriesListBox.TabIndex = 0;
-            this.usersRepositoriesListBox.SelectedIndexChanged += new System.EventHandler(this.usersRepositoriesListBox_SelectedIndexChanged);
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(6, 20);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(300, 277);
-            this.listBox2.TabIndex = 0;
+            this.usersRepositoriesListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.usersRepositoriesListBox_MouseDoubleClick);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.listBox2);
+            this.groupBox4.Controls.Add(this.repositoryInfoListBox);
             this.groupBox4.Location = new System.Drawing.Point(330, 40);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(312, 303);
+            this.groupBox4.Size = new System.Drawing.Size(414, 317);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Информация о коммите";
+            this.groupBox4.Text = "Информация репозитория";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            // 
+            // repositoryInfoListBox
+            // 
+            this.repositoryInfoListBox.FormattingEnabled = true;
+            this.repositoryInfoListBox.Location = new System.Drawing.Point(6, 19);
+            this.repositoryInfoListBox.Name = "repositoryInfoListBox";
+            this.repositoryInfoListBox.Size = new System.Drawing.Size(402, 290);
+            this.repositoryInfoListBox.TabIndex = 0;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.listBox3);
-            this.groupBox3.Location = new System.Drawing.Point(12, 260);
+            this.groupBox3.Controls.Add(this.commitsListBox);
+            this.groupBox3.Location = new System.Drawing.Point(12, 264);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(312, 122);
-            this.groupBox3.TabIndex = 6;
+            this.groupBox3.Size = new System.Drawing.Size(312, 141);
+            this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Список коммитов";
+            // 
+            // commitsListBox
+            // 
+            this.commitsListBox.FormattingEnabled = true;
+            this.commitsListBox.Location = new System.Drawing.Point(6, 19);
+            this.commitsListBox.Name = "commitsListBox";
+            this.commitsListBox.Size = new System.Drawing.Size(300, 108);
+            this.commitsListBox.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 391);
+            this.ClientSize = new System.Drawing.Size(756, 408);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox4);
@@ -227,12 +229,12 @@
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Button showRepositoriesButton;
         private System.Windows.Forms.GroupBox groupBox2;
-        public System.Windows.Forms.ListBox usersRepositoriesListBox;
+        private System.Windows.Forms.ListBox usersRepositoriesListBox;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox4;
-        public System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox repositoryInfoListBox;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ListBox commitsListBox;
     }
 }
 

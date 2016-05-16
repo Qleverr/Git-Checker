@@ -16,28 +16,58 @@ namespace repo_checker
     class Controller
     {
         private Form1 _view;
+        public IReadOnlyList<Repository> repositories;
+        public GitHubClient client;
+        public Uri ghe = new Uri("https://github.com/");
 
         public Controller(Form1 view)
         {
             this._view = view;
             this._view.PrintRepositoriesByUser += GetRepositoriesByUser;
-            this._view.repositories = new List<Repository>();
+            this._view.PrintRepositoryCommits += GetRepositoryCommits;
         }
 
         private async void GetRepositoriesByUser()
         {
-            var ghe = new Uri("https://github.com/");
-            this._view.client = new GitHubClient(new ProductHeaderValue(_view.GetUsername()), ghe);
+            client = new GitHubClient(new ProductHeaderValue(_view.GetUsername()), ghe);
+            repositories = await client.Repository.GetAllForUser(_view.GetUsername());
 
-            this._view.repositories = await this._view.client.Repository.GetAllForUser(_view.GetUsername());
-
-            //DateTimeOffset data;
-            foreach (var repository in this._view.repositories)
+            foreach (var r in repositories)
             {
-                _view.GetUserRepositoriesListBox().Items.Add(repository.Name);
+                _view.GetUserRepositoriesListBox().Items.Add(r.Name);
             }
         }
-        
+
+        //private async void GetRepositoryInfo()
+        //{
+        //    var client = new GitHubClient(new ProductHeaderValue(_view.GetUsername()), new Uri("https://github.com/"));
+        //    var repositories = await client.Repository.GetAllForUser(_view.GetUsername());
+
+        //    var rep = repositories[_view.GetUserRepositoriesListBox().SelectedIndex];
+        //    var content = await client.Repository.Content.GetAllContents(rep.Owner.Login, rep.Name);
+
+        //    foreach (var element in content)
+        //    {
+        //        _view.GetRepositoryInfoListBox().Items.Add(element.Content.ToString());
+        //    }
+        //}
+
+        private async void GetRepositoryCommits()
+        {
+            ListBox commitsListBox = _view.GetCommitsListBox();
+
+            commitsListBox.Items.Clear();
+            var rep = repositories[_view.GetUserRepositoriesListBox().SelectedIndex];
+            var commits = await client.Repository.Commits.GetAll(rep.Owner.Login, rep.Name);
+
+            foreach (var c in commits)
+            {
+                commitsListBox.Items.Add("Commit: " + c.Commit.Message);
+                commitsListBox.Items.Add("Posted by: " + c.Committer.Login);
+                commitsListBox.Items.Add("Date: " + c.Commit.Author.Date.ToString());
+                commitsListBox.Items.Add("");
+            }
+        }
     }
 }
 
