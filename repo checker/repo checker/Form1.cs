@@ -29,7 +29,7 @@ namespace repo_checker
 
         public string GetUsername()
         {
-            return this.usernameTextBox.Text.ToString();
+            return this.logincomboBox.Text.ToString();
         }
 
         public ListBox GetRepositoriesListBox()
@@ -79,9 +79,13 @@ namespace repo_checker
             this.Close();
         }
 
-        private void usernameTextBox_TextChanged(object sender, EventArgs e)
-        {
 
+        private void logincomboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PrintRepositoriesByUser();
+            }
         }
     }
 }

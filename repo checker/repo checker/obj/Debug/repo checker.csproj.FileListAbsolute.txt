@@ -54,16 +54,9 @@ C:\Users\Василий\Documents\GitHub\Git-Checker\repo checker\repo checker\o
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\repo checker.exe
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\repo checker.pdb
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Common.Logging.dll
-C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\CSharp.GitHub.dll
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Octokit.dll
-C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Spring.Rest.dll
-C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Spring.Social.Core.dll
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Octokit.pdb
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Octokit.xml
-C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Spring.Rest.pdb
-C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Spring.Rest.xml
-C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Spring.Social.Core.pdb
-C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Spring.Social.Core.xml
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo checker.csprojResolveAssemblyReference.cache
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo_checker.Form1.resources
 C:\Users\1\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo_checker.Properties.Resources.resources
