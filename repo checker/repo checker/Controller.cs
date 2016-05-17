@@ -26,24 +26,27 @@ namespace repo_checker
             this._view = view;
             this._view.PrintRepositoriesByUser += GetRepositoriesByUser;
             this._view.PrintRepositoryCommits += GetRepositoryCommits;
+            this._view.PrintCommitedChanges += GetCommitedInfo;
             this._view.SaveZip += Save;
         }
 
         private async void GetRepositoriesByUser()
         {
+            _view.ClearAllListBoxes();
+
             client = new GitHubClient(new ProductHeaderValue(_view.GetUsername()), ghe);
             repositories = await client.Repository.GetAllForUser(_view.GetUsername());
 
             foreach (var r in repositories)
             {
-                _view.GetUserRepositoriesListBox().Items.Add(r.Name);
+                _view.GetRepositoriesListBox().Items.Add(r.Name);
             }
         }
 
         private async void Save()
         {
             
-            var rep = repositories[this._view.GetUserRepositoriesListBox().SelectedIndex];
+            var rep = repositories[this._view.GetRepositoriesListBox().SelectedIndex];
             var commits = await client.Repository.Commits.GetAll(rep.Owner.Login, rep.Name);
 
             var releases = await client.Release.GetAll(rep.Owner.Login, rep.Name);
@@ -58,26 +61,23 @@ namespace repo_checker
             }
         }
 
-        //private async void GetRepositoryInfo()
-        //{
-        //    var client = new GitHubClient(new ProductHeaderValue(_view.GetUsername()), new Uri("https://github.com/"));
-        //    var repositories = await client.Repository.GetAllForUser(_view.GetUsername());
+        private async void GetCommitedInfo()
+        {
+            var rep = repositories[_view.GetRepositoriesListBox().SelectedIndex];
+            var content = await client.Repository.Content.GetAllContents(rep.Owner.Login, rep.Name);
 
-        //    var rep = repositories[_view.GetUserRepositoriesListBox().SelectedIndex];
-        //    var content = await client.Repository.Content.GetAllContents(rep.Owner.Login, rep.Name);
-
-        //    foreach (var element in content)
-        //    {
-        //        _view.GetRepositoryInfoListBox().Items.Add(element.Content.ToString());
-        //    }
-        //}
+            foreach (var element in content)
+            {
+                _view.GetCommitedInfoListBox().Items.Add(element.EncodedContent.ToString());
+            }
+        }
 
         private async void GetRepositoryCommits()
         {
             ListBox commitsListBox = _view.GetCommitsListBox();
 
             commitsListBox.Items.Clear();
-            var rep = repositories[_view.GetUserRepositoriesListBox().SelectedIndex];
+            var rep = repositories[_view.GetRepositoriesListBox().SelectedIndex];
             var commits = await client.Repository.Commits.GetAll(rep.Owner.Login, rep.Name);
 
             foreach (var c in commits)

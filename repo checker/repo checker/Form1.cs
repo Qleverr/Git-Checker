@@ -19,6 +19,7 @@ namespace repo_checker
 
         public event UserEventHandler PrintRepositoriesByUser;
         public event UserEventHandler PrintRepositoryCommits;
+        public event UserEventHandler PrintCommitedChanges;
         public event UserEventHandler SaveZip;
 
         public Form1()
@@ -31,14 +32,14 @@ namespace repo_checker
             return this.usernameTextBox.Text.ToString();
         }
 
-        public ListBox GetUserRepositoriesListBox()
+        public ListBox GetRepositoriesListBox()
         {
-            return this.usersRepositoriesListBox;
+            return this.repositoriesListBox;
         }
 
-        public ListBox GetRepositoryInfoListBox()
+        public ListBox GetCommitedInfoListBox()
         {
-            return this.repositoryInfoListBox;
+            return this.commitedInfoListBox;
         }
 
         public ListBox GetCommitsListBox()
@@ -46,22 +47,29 @@ namespace repo_checker
             return this.commitsListBox;
         }
 
+        public void ClearAllListBoxes()
+        {
+            this.repositoriesListBox.Items.Clear();
+            this.commitsListBox.Items.Clear();
+            this.commitedInfoListBox.Items.Clear();
+        }
+
         private void showRepositoriesButton_Click(object sender, EventArgs e)
         {
             PrintRepositoriesByUser();
         }
 
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void usersRepositoriesListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void repositoriesListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             PrintRepositoryCommits();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void commitsListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            PrintCommitedChanges();
+        }
+
+        private void saveCurrentRepository_Click(object sender, EventArgs e)
         {
             SaveZip();
         }
@@ -69,6 +77,11 @@ namespace repo_checker
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void usernameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
