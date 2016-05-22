@@ -25,11 +25,12 @@ namespace repo_checker
         public Form1()
         {
             InitializeComponent();
+            saveCurrentRepositoryButton.Enabled = false;
         }
 
         public string GetUsername()
         {
-            return this.logincomboBox.Text.ToString();
+            return this.loginСomboBox.Text.ToString();
         }
 
         public ListBox GetRepositoriesListBox()
@@ -45,6 +46,11 @@ namespace repo_checker
         public ListBox GetCommitsListBox()
         {
             return this.commitsListBox;
+        }
+
+        public Button GetSaveButton()
+        {
+            return this.saveCurrentRepositoryButton;
         }
 
         public void ClearAllListBoxes()

@@ -33,19 +33,29 @@ namespace repo_checker
         private async void GetRepositoriesByUser()
         {
             _view.ClearAllListBoxes();
+            _view.GetSaveButton().Enabled = false;
 
-            client = new GitHubClient(new ProductHeaderValue(_view.GetUsername()), ghe);
-            repositories = await client.Repository.GetAllForUser(_view.GetUsername());
-
-            foreach (var r in repositories)
+            if (_view.GetRepositoriesListBox().Items.Count == 0)
             {
-                _view.GetRepositoriesListBox().Items.Add(r.Name);
+                if (InternetIsConnected())
+                {
+                    client = new GitHubClient(new ProductHeaderValue(_view.GetUsername()), ghe);
+                    repositories = await client.Repository.GetAllForUser(_view.GetUsername());
+
+                    foreach (var r in repositories)
+                    {
+                        _view.GetRepositoriesListBox().Items.Add(r.Name);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No internet connection.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private async void Save()
         {
-            
             var rep = repositories[this._view.GetRepositoriesListBox().SelectedIndex];
             var commits = await client.Repository.Commits.GetAll(rep.Owner.Login, rep.Name);
 
@@ -59,6 +69,8 @@ namespace repo_checker
             {
                 wc.DownloadFile(ghe + _view.GetUsername() + "/" + rep.Name + "/archive/master.zip", save.FileName);
             }
+
+            _view.GetSaveButton().Enabled = false;
         }
 
         private async void GetCommitedInfo()
@@ -75,17 +87,38 @@ namespace repo_checker
         private async void GetRepositoryCommits()
         {
             ListBox commitsListBox = _view.GetCommitsListBox();
+            _view.GetSaveButton().Enabled = true;
 
             commitsListBox.Items.Clear();
             var rep = repositories[_view.GetRepositoriesListBox().SelectedIndex];
-            var commits = await client.Repository.Commits.GetAll(rep.Owner.Login, rep.Name);
 
-            foreach (var c in commits)
+            try
             {
-                commitsListBox.Items.Add("Commit: " + c.Commit.Message);
-                commitsListBox.Items.Add("Posted by: " + c.Committer.Login);
-                commitsListBox.Items.Add("Date: " + c.Commit.Author.Date.ToString());
-                commitsListBox.Items.Add("");
+                var commits = await client.Repository.Commits.GetAll(rep.Owner.Login, rep.Name);
+                foreach (var c in commits)
+                {
+                    commitsListBox.Items.Add("Commit: " + c.Commit.Message);
+                    commitsListBox.Items.Add("Posted by: " + c.Committer.Login);
+                    commitsListBox.Items.Add("Date: " + c.Commit.Author.Date.ToString());
+                    commitsListBox.Items.Add("");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public static bool InternetIsConnected()
+        {
+            try
+            {
+                System.Net.IPHostEntry i = System.Net.Dns.GetHostEntry("www.github.com");
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

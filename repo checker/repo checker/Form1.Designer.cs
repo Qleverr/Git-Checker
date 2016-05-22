@@ -33,7 +33,7 @@
             this.справкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.logincomboBox = new System.Windows.Forms.ComboBox();
+            this.loginСomboBox = new System.Windows.Forms.ComboBox();
             this.saveCurrentRepositoryButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.repositoriesListBox = new System.Windows.Forms.ListBox();
@@ -82,7 +82,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.logincomboBox);
+            this.groupBox1.Controls.Add(this.loginСomboBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(312, 53);
@@ -90,14 +90,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Введите логин пользователя";
             // 
-            // logincomboBox
+            // loginСomboBox
             // 
-            this.logincomboBox.FormattingEnabled = true;
-            this.logincomboBox.Location = new System.Drawing.Point(6, 19);
-            this.logincomboBox.Name = "logincomboBox";
-            this.logincomboBox.Size = new System.Drawing.Size(300, 21);
-            this.logincomboBox.TabIndex = 2;
-            this.logincomboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.logincomboBox_KeyDown);
+            this.loginСomboBox.FormattingEnabled = true;
+            this.loginСomboBox.Location = new System.Drawing.Point(6, 19);
+            this.loginСomboBox.Name = "loginСomboBox";
+            this.loginСomboBox.Size = new System.Drawing.Size(300, 21);
+            this.loginСomboBox.TabIndex = 2;
+            this.loginСomboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.logincomboBox_KeyDown);
             // 
             // saveCurrentRepositoryButton
             // 
@@ -203,7 +203,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox commitsListBox;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem1;
-        private System.Windows.Forms.ComboBox logincomboBox;
+        private System.Windows.Forms.ComboBox loginСomboBox;
     }
 }
 
