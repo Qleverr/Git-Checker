@@ -45,14 +45,27 @@ namespace repo_checker
 
         public string GetUsername()
         {
-            //загрузка
+            string s = this.loginСomboBox.Text.ToString();
+
+            loginСomboBox.Items.Clear();
+
             HashSet<string> hs = new HashSet<string>(File.ReadAllLines("TextComboBox.txt", Encoding.GetEncoding(1251)));
             hs.Add(this.loginСomboBox.Text.ToString());
 
-            //сохранение
             File.WriteAllLines("TextComboBox.txt", hs.ToArray(), Encoding.GetEncoding(1251));
 
-            return this.loginСomboBox.Text.ToString();
+            StreamReader sr = new StreamReader("TextComboBox.txt");
+            String line = sr.ReadLine();
+
+            while (line != null)
+            {
+                loginСomboBox.Items.Add(line);
+                line = sr.ReadLine();
+            }
+
+            sr.Close();
+
+            return s;
         }
 
 
