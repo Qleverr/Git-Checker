@@ -94,3 +94,16 @@ C:\Users\Василий\Documents\repo checker\repo checker\obj\Debug\repo check
 C:\Users\Василий\Documents\repo checker\repo checker\obj\Debug\repo_checker.Form1.resources
 C:\Users\Василий\Documents\repo checker\repo checker\obj\Debug\repo_checker.Properties.Resources.resources
 C:\Users\Василий\Documents\repo checker\repo checker\obj\Debug\repo checker.csproj.GenerateResource.Cache
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\repo checker.exe.config
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo checker.exe
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo checker.pdb
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\repo checker.exe
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\repo checker.pdb
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Common.Logging.dll
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Octokit.dll
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Octokit.pdb
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\bin\Debug\Octokit.xml
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo checker.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo_checker.Form1.resources
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo_checker.Properties.Resources.resources
+C:\Users\user\Documents\GitHub\Git-Checker\repo checker\repo checker\obj\Debug\repo checker.csproj.GenerateResource.Cache

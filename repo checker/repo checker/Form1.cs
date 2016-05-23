@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Octokit;
 using Octokit.Helpers;
 using Octokit.Internal;
+using System.IO;
 
 namespace repo_checker
 {
@@ -26,12 +27,34 @@ namespace repo_checker
         {
             InitializeComponent();
             saveCurrentRepositoryButton.Enabled = false;
+
+            loginСomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            loginСomboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            StreamReader sr = new StreamReader("TextComboBox.txt");
+            String line = sr.ReadLine();
+
+            while (line != null)
+            {
+                loginСomboBox.Items.Add(line);
+                line = sr.ReadLine();
+            }
+
+            sr.Close();
         }
 
         public string GetUsername()
         {
+            //загрузка
+            HashSet<string> hs = new HashSet<string>(File.ReadAllLines("TextComboBox.txt", Encoding.GetEncoding(1251)));
+            hs.Add(this.loginСomboBox.Text.ToString());
+
+            //сохранение
+            File.WriteAllLines("TextComboBox.txt", hs.ToArray(), Encoding.GetEncoding(1251));
+
             return this.loginСomboBox.Text.ToString();
         }
+
 
         public ListBox GetRepositoriesListBox()
         {
@@ -92,6 +115,11 @@ namespace repo_checker
             {
                 PrintRepositoriesByUser();
             }
+        }
+
+        private void loginСomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

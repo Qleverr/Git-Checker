@@ -97,6 +97,7 @@
             this.loginСomboBox.Name = "loginСomboBox";
             this.loginСomboBox.Size = new System.Drawing.Size(300, 21);
             this.loginСomboBox.TabIndex = 2;
+            this.loginСomboBox.SelectedIndexChanged += new System.EventHandler(this.loginСomboBox_SelectedIndexChanged);
             this.loginСomboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.logincomboBox_KeyDown);
             // 
             // saveCurrentRepositoryButton
