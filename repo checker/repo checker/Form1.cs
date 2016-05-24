@@ -31,7 +31,7 @@ namespace repo_checker
             loginСomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             loginСomboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-            StreamReader sr = new StreamReader("TextComboBox.txt");
+            StreamReader sr = new StreamReader("login_base.txt");
             String line = sr.ReadLine();
 
             while (line != null)
@@ -49,12 +49,12 @@ namespace repo_checker
 
             loginСomboBox.Items.Clear();
 
-            HashSet<string> hs = new HashSet<string>(File.ReadAllLines("TextComboBox.txt", Encoding.GetEncoding(1251)));
+            HashSet<string> hs = new HashSet<string>(File.ReadAllLines("login_base.txt", Encoding.GetEncoding(1251)));
             hs.Add(this.loginСomboBox.Text.ToString());
 
-            File.WriteAllLines("TextComboBox.txt", hs.ToArray(), Encoding.GetEncoding(1251));
+            File.WriteAllLines("login_base.txt", hs.ToArray(), Encoding.GetEncoding(1251));
 
-            StreamReader sr = new StreamReader("TextComboBox.txt");
+            StreamReader sr = new StreamReader("login_base.txt");
             String line = sr.ReadLine();
 
             while (line != null)
@@ -133,6 +133,17 @@ namespace repo_checker
         private void loginСomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void удалитьБазуЛогиновToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Вы действительно хотите удалить все логины?", "Удаление", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                File.Delete("login_base.txt");
+                File.Create("login_base.txt");
+                loginСomboBox.Items.Clear();
+            }
         }
     }
 }

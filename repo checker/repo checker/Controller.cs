@@ -49,7 +49,7 @@ namespace repo_checker
                 }
                 else
                 {
-                    MessageBox.Show("No internet connection.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Нет интернет-соединения.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -105,7 +105,7 @@ namespace repo_checker
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
