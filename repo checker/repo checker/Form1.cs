@@ -22,7 +22,7 @@ namespace repo_checker
         public event UserEventHandler PrintRepositoryCommits;
         public event UserEventHandler PrintCommitedChanges;
         public event UserEventHandler SaveZip;
-
+        public event UserEventHandler DeleteLogins;
         public Form1()
         {
             InitializeComponent();
@@ -68,7 +68,10 @@ namespace repo_checker
             return s;
         }
 
-
+        public ComboBox GetLoginComboBox()
+        {
+            return this.loginСomboBox;
+        }
         public ListBox GetRepositoriesListBox()
         {
             return this.repositoriesListBox;
@@ -140,9 +143,7 @@ namespace repo_checker
             DialogResult dialogResult = MessageBox.Show("Вы действительно хотите удалить все логины?", "Удаление", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                File.Delete("login_base.txt");
-                File.Create("login_base.txt");
-                loginСomboBox.Items.Clear();
+                DeleteLogins();
             }
         }
     }

@@ -11,6 +11,7 @@ using Octokit;
 using System.Net;
 using Octokit.Helpers;
 using Octokit.Internal;
+using System.IO;
 
 namespace repo_checker
 {
@@ -28,6 +29,7 @@ namespace repo_checker
             this._view.PrintRepositoryCommits += GetRepositoryCommits;
             this._view.PrintCommitedChanges += GetCommitedInfo;
             this._view.SaveZip += Save;
+            this._view.DeleteLogins += DeleteBase;
         }
 
         private async void GetRepositoriesByUser()
@@ -100,6 +102,7 @@ namespace repo_checker
                     commitsListBox.Items.Add("Commit: " + c.Commit.Message);
                     commitsListBox.Items.Add("Posted by: " + c.Committer.Login);
                     commitsListBox.Items.Add("Date: " + c.Commit.Author.Date.ToString());
+                    commitsListBox.Items.Add(c.Commit.Url);
                     commitsListBox.Items.Add("");
                 }
             }
@@ -120,6 +123,13 @@ namespace repo_checker
             {
                 return false;
             }
+        }
+
+        private void DeleteBase()
+        {
+            File.Delete("login_base.txt");
+            File.Create("login_base.txt");
+            _view.GetLoginComboBox().Items.Clear();
         }
     }
 }
