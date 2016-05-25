@@ -174,6 +174,7 @@
             this.commitsListBox.Name = "commitsListBox";
             this.commitsListBox.Size = new System.Drawing.Size(300, 147);
             this.commitsListBox.TabIndex = 0;
+            this.commitsListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.commitsListBox_MouseDoubleClick);
             // 
             // Form1
             // 

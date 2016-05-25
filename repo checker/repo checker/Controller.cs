@@ -99,8 +99,8 @@ namespace repo_checker
 
                 foreach (var c in commit.Files)
                 {
-                    commitsInfo.Items.Add("Имя файла:" + c.Filename);
-                    commitsInfo.Items.Add("Статус файла:" + c.Status);
+                    commitsInfo.Items.Add("Имя файла: " + c.Filename);
+                    commitsInfo.Items.Add("Статус файла: " + c.Status);
                     commitsInfo.Items.Add("");
                 }
 
