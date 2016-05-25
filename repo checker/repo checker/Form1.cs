@@ -129,7 +129,14 @@ namespace repo_checker
         {
             if (e.KeyCode == Keys.Enter)
             {
-                PrintRepositoriesByUser();
+                try
+                {
+                    PrintRepositoriesByUser();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -145,6 +152,11 @@ namespace repo_checker
             {
                 DeleteLogins();
             }
+        }
+
+        private void справкаToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Программа RepoChecker предназначена для отслеживания изменений в репозиториях определённых пользователей.\n Все ранее использованные логины пользователей сохраняются в базе. \nЧтобы очистить базу, нажмите соответствующую кнопку на вкладке \"Меню\". \nДля ввода логина нажмите клавишу \"Enter\".\nЧтобы просмотреть список коммитов определённого репозитория, дважды щёлкните по нему мышкой.\nЧтобы просмотреть список файлов в коммите, дважды щёлкните по ссылке коммита.\nЧтобы сохранить архив с файлами репозитория, выберите репозиторий и нажмите на кнопку \"Сохранить выбранный репозиторий\".", "Справка", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

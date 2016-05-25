@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьБазуЛогиновToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,7 +42,6 @@
             this.commitedInfoListBox = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.commitsListBox = new System.Windows.Forms.ListBox();
-            this.удалитьБазуЛогиновToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,11 +69,19 @@
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.менюToolStripMenuItem.Text = "Меню";
             // 
+            // удалитьБазуЛогиновToolStripMenuItem
+            // 
+            this.удалитьБазуЛогиновToolStripMenuItem.Name = "удалитьБазуЛогиновToolStripMenuItem";
+            this.удалитьБазуЛогиновToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.удалитьБазуЛогиновToolStripMenuItem.Text = "Удалить базу логинов";
+            this.удалитьБазуЛогиновToolStripMenuItem.Click += new System.EventHandler(this.удалитьБазуЛогиновToolStripMenuItem_Click);
+            // 
             // справкаToolStripMenuItem1
             // 
             this.справкаToolStripMenuItem1.Name = "справкаToolStripMenuItem1";
             this.справкаToolStripMenuItem1.Size = new System.Drawing.Size(194, 22);
             this.справкаToolStripMenuItem1.Text = "Справка";
+            this.справкаToolStripMenuItem1.Click += new System.EventHandler(this.справкаToolStripMenuItem1_Click);
             // 
             // выходToolStripMenuItem
             // 
@@ -166,13 +174,6 @@
             this.commitsListBox.Name = "commitsListBox";
             this.commitsListBox.Size = new System.Drawing.Size(300, 147);
             this.commitsListBox.TabIndex = 0;
-            // 
-            // удалитьБазуЛогиновToolStripMenuItem
-            // 
-            this.удалитьБазуЛогиновToolStripMenuItem.Name = "удалитьБазуЛогиновToolStripMenuItem";
-            this.удалитьБазуЛогиновToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.удалитьБазуЛогиновToolStripMenuItem.Text = "Удалить базу логинов";
-            this.удалитьБазуЛогиновToolStripMenuItem.Click += new System.EventHandler(this.удалитьБазуЛогиновToolStripMenuItem_Click);
             // 
             // Form1
             // 
