@@ -41,12 +41,19 @@ namespace repo_checker
             {
                 if (InternetIsConnected())
                 {
-                    client = new GitHubClient(new ProductHeaderValue(_view.GetUsername()), ghe);
-                    repositories = await client.Repository.GetAllForUser(_view.GetUsername());
+                    try
+                    { 
+                      client = new GitHubClient(new ProductHeaderValue(_view.GetUsername()), ghe);
+                      repositories = await client.Repository.GetAllForUser(_view.GetUsername());
 
-                    foreach (var r in repositories)
+                       foreach (var r in repositories)
+                       {
+                         _view.GetRepositoriesListBox().Items.Add(r.Name);
+                       }
+                    }
+                    catch (Exception ex)
                     {
-                        _view.GetRepositoriesListBox().Items.Add(r.Name);
+                       MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -77,12 +84,30 @@ namespace repo_checker
 
         private async void GetCommitedInfo()
         {
-            var rep = repositories[_view.GetRepositoriesListBox().SelectedIndex];
-            var content = await client.Repository.Content.GetAllContents(rep.Owner.Login, rep.Name);
+            ListBox commitsInfo = _view.GetCommitedInfoListBox();
+            _view.GetSaveButton().Enabled = true;
 
-            foreach (var element in content)
+            commitsInfo.Items.Clear();
+            var rep = repositories[_view.GetRepositoriesListBox().SelectedIndex];
+            string url = _view.GetCommitsListBox().SelectedItem.ToString();
+            string[] getref = url.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            url = getref[7];
+
+            try
             {
-                _view.GetCommitedInfoListBox().Items.Add(element.EncodedContent.ToString());
+                var commit = await client.Repository.Commit.Get(rep.Owner.Login, rep.Name, url);
+
+                foreach (var c in commit.Files)
+                {
+                    commitsInfo.Items.Add("Имя файла:" + c.Filename);
+                    commitsInfo.Items.Add("Статус файла:" + c.Status);
+                    commitsInfo.Items.Add("");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -99,9 +124,9 @@ namespace repo_checker
                 var commits = await client.Repository.Commits.GetAll(rep.Owner.Login, rep.Name);
                 foreach (var c in commits)
                 {
-                    commitsListBox.Items.Add("Commit: " + c.Commit.Message);
-                    commitsListBox.Items.Add("Posted by: " + c.Committer.Login);
-                    commitsListBox.Items.Add("Date: " + c.Commit.Author.Date.ToString());
+                    commitsListBox.Items.Add("Коммит: " + c.Commit.Message);
+                    commitsListBox.Items.Add("Выложил: " + c.Committer.Login);
+                    commitsListBox.Items.Add("Дата: " + c.Commit.Author.Date.ToString());
                     commitsListBox.Items.Add(c.Commit.Url);
                     commitsListBox.Items.Add("");
                 }
