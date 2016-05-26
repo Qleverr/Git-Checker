@@ -147,7 +147,7 @@
             this.groupBox4.Size = new System.Drawing.Size(414, 317);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Информация репозитория";
+            this.groupBox4.Text = "Информация о статусе файлов";
             // 
             // commitedInfoListBox
             // 
@@ -156,6 +156,7 @@
             this.commitedInfoListBox.Name = "commitedInfoListBox";
             this.commitedInfoListBox.Size = new System.Drawing.Size(402, 290);
             this.commitedInfoListBox.TabIndex = 0;
+            this.commitedInfoListBox.SelectedIndexChanged += new System.EventHandler(this.commitedInfoListBox_SelectedIndexChanged);
             // 
             // groupBox3
             // 
